@@ -5,12 +5,14 @@ import Revision from './Revision.js';
 
 export { User, Document, Session, Revision };
 
-export default {
+const Models = {
   User,
   Document,
   Session,
   Revision
 };
+
+export default Models;
 
 // Export model names as constants
 export const MODEL_NAMES = {

@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
 :root {
+  /* Google Docs Color Palette */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #202124;
+  --toolbar-bg: #f1f3f4;
+  --border: #dadce0;
+  --primary: #1a73e8;
+  --hover-bg: #f8f9fa;
+  --text-secondary: #5f6368;
+  --text-tertiary: #9aa0a6;
+  --shadow: rgba(60, 64, 67, 0.3);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  font-family: var(--font-roboto), sans-serif;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* Focus styles */
+.prose:focus {
+  outline: none;
+}
+
+/* TipTap Editor Styles */
+.ProseMirror {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: 100%;
+  width: 100%;
+  min-height: calc(100vh - 300px);
+  padding: 0;
+  margin: 0;
+}
+
+.ProseMirror:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove any default focus styles */
+.ProseMirror-focused {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Ensure editor content fills container */
+.prose .ProseMirror {
+  height: 100% !important;
+  min-height: calc(100vh - 300px) !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Remove any default margins/padding from prose */
+.prose {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Selection styles */
+::selection {
+  background: rgba(26, 115, 232, 0.2);
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dadce0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9aa0a6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .max-w-4xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }

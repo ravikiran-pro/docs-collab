@@ -8,7 +8,6 @@ import UndoRedoButtons from './toolbar/UndoRedoButtons'
 import InsertLinkButton from './toolbar/InsertLinkButton'
 import { List, ListOrdered, Code } from 'lucide-react'
 import AlignPicker from './toolbar/AlignPicker'
-import { useEditorStore } from '@/store/editorStore'
 import { fontOptions, textStyleOptions, zoomOptions } from '@/constants/helper'
 
 const MenuBar = ({ editor, setZoom }) => {
